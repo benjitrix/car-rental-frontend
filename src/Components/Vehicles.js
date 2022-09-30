@@ -16,8 +16,8 @@ const Vehicles = () => {
     })
   }, [])
 
-  if (!isLoading) {
-    return <h2>Loading</h2>
+  if (isLoading) {
+    return <h2>Loading...</h2>
   } else {
     return (
       <section className='vehicles'>

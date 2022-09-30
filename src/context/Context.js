@@ -4,7 +4,7 @@ import AuthServices from '../services/AuthServices'
 export const AppContext = React.createContext()
 
 export const AppProvider = ({children}) => {
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
   const [token, setToken] = useState('')
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [user, setUser] = useState({name: '', email: ''})
@@ -32,7 +32,7 @@ export const AppProvider = ({children}) => {
 
   return (
     <div>
-      { !isLoading ? <h2>Loading...</h2> :
+      { isLoading ? <h2>Loading...</h2> :
         <AppContext.Provider value={{
           isLoading,
           token,
