@@ -1,0 +1,1 @@
+export const ServerURL = 'https://car-rental-mern-app.herokuapp.com'
