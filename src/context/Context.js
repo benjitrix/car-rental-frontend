@@ -4,12 +4,16 @@ import AuthServices from '../services/AuthServices'
 export const AppContext = React.createContext()
 
 export const AppProvider = ({children}) => {
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const [token, setToken] = useState('')
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [user, setUser] = useState({name: '', email: ''})
 
   console.log(user.name);
+
+  useEffect(() => {
+    setIsLoading(false)
+  }, [])
 
   useEffect(() => {
     const retrievedToken = localStorage.getItem('car-rental-token')

@@ -9,6 +9,7 @@ const Vehicles = () => {
   const { isLoading, setIsLoading } = useGlobalContext()
 
   useEffect(() => {
+    // setIsLoading(true)
     VehicleServices.getAllVehicles().then(data => {
       setVehicles(data.message.vehicles)
       setIsLoading(false)
